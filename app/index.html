@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CRUD with mLab</title>
+  <meta charset="utf-8">
+  <!-- build:css css/index.min.css -->
+  <link rel="stylesheet" href="css/libs/normalize.css">
+  <link rel="stylesheet" href="css/libs/bs-grid.css">
+  <link rel="stylesheet" href="css/libs/bs-tables.css">
+  <link rel="stylesheet" href="css/libs/bs-forms.css">
+  <link rel="stylesheet" href="css/libs/bs-buttons.css">
+  <link rel="stylesheet" href="css/libs/bs-modal.css">
+  <link rel="stylesheet" href="css/libs/utilities.css">
+  <link rel="stylesheet" href="css/libs/ui-loader.css">
+  <link rel="stylesheet" href="css/libs/ui-toast.css">
+  <!-- endbuild -->
+</head>
+<body>
+
+  <div class="container">
+    <h3 class="pull-left">用户列表</h3>
+    <div class="pt10">
+      <button class="btn btn-primary add-btn pull-right ml20">新增</button>
+      <form class="form-inline pull-right" id="searchForm">
+        <input type="search" class="form-control" id="keyName" placeholder="请输入姓名"/>
+        <button type="submit" class="btn btn-primary ml10">搜索</button>
+      </form>
+    </div>
+    <table class="table table-bordered table-condensed" id="userTbl">
+      <thead>
+        <tr>
+          <th width="30%">姓名</th>
+          <th width="20%">年龄</th>
+          <th width="20%">性别</th>
+          <th width="30%">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <script type="text/html" id="usersTmp">
+        {{if users.length > 0}}
+        {{each users as user}}
+        <tr>
+          <td>{{user.name}}</td>
+          <td align="center">{{user.age}}</td>
+          <td align="center">{{user.sex == 1 ? '男' : '女'}}</td>
+          <td align="center">
+            <button class="btn btn-sm btn-default edit-btn">修改</button>
+            <button class="btn btn-sm btn-default delete-btn">删除</button>
+          </td>
+        </tr>
+        {{/each}}
+        {{else}}
+        <tr>
+          <td colspan="4">暂无数据</td>
+        </tr>
+        {{/if}}
+        </script>
+      </tbody>
+    </table>
+  </div>
+
+  <form class="modal fade" id="userModal" tabindex="-1"
+    role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content"></div>
+    </div>
+    </div>
+  </form>
+
+  <!-- build:js js/index.min.js -->
+  <script src="js/libs/jquery.js"></script>
+  <script src="js/libs/template.js"></script>
+  <script src="js/libs/bs-modal.js"></script>
+  <script src="js/libs/jquery.validate.js"></script>
+  <script src="js/libs/jquery.validate.messages_zh.js"></script>
+  <script src="js/libs/ui-loader.js"></script>
+  <script src="js/libs/ui-toast.js"></script>
+  <script src="js/libs/ui-confirm.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/index.js"></script>
+  <!-- endbuild -->
+</body>
+</html>

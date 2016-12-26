@@ -1,0 +1,35 @@
+/*组件*/
+.toast {
+  position: fixed;
+  z-index: 3000;
+  min-width: 20em;
+  max-width: 30em;
+  min-height: 0;
+  background-color: rgb(40, 40, 40);
+  opacity: 0.75;
+  filter: alpha(opacity=75);
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+}
+.toast-title {
+  padding-bottom: 10px;
+}
+.toast-content {
+  padding-left: 20px;
+  padding-right: 20px;
+  word-break: break-all;
+}
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding-top: 0;
+  margin-left: -11px;
+  margin-top: -11px;
+  z-index: 1055;
+}
+.loader img {
+  width: 22px;
+  height: 22px;
+}

@@ -1,0 +1,16 @@
+本实例使用mLab RESTful 数据API和jQuery创建一个简单的CRUD应用，支持简单搜索和数据合法性验证。
+
+Demo: https://szriafan.github.io/mlab-data-api/app
+
+一、新建数据
+
+首先上mongolab官网注册账号，然后新建mongoDB数据库sample，请参考教程http://www.riafan.com/mlab-intro
+
+二、部署
+
+1. 安装nodejs: https://nodejs.org/en/
+2. 打开命令行程序，切换到当前工程的根路径
+3. > npm install安装grunt及插件
+4. > grunt将app中的文件合并压缩后打包到dist文件夹中
+
+最终分发dist文件夹的文件
