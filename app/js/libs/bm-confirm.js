@@ -13,8 +13,8 @@ var confirm = {
       '<div class="modal-content">' +
       '<div class="modal-body">确认要删除吗？</div>' +
       '<div class="modal-footer" align="center">' +
-      '<button type="button" class="btn btn-default" id="okBtn">确定</button>' +
-      ' <button type="submit" class="btn btn-primary" data-dismiss="modal" id="cancelBtn">取消</button>' +
+      '<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>' +
+      '<button type="submit" class="btn btn-primary">确定</button>' +
       '</div>' +
       '</div>' +
       '</div>' +
@@ -24,9 +24,8 @@ var confirm = {
 
     $('#confirmModal').modal('show').on('hide.bs.modal', function() {
       $(this).remove();
-    });
-
-    $('#okBtn').click(function() {
+    }).submit(function(e) {
+      e.preventDefault();
       if (typeof callback === 'function') {
         callback();
       }
@@ -36,8 +35,7 @@ var confirm = {
   /**
    * 移除确认框
    */
-  remove: function(){
+  remove: function() {
     $('#confirmModal').modal('hide');
-    $('#confirmModal').remove();
   }
 };

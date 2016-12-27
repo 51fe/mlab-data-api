@@ -70,7 +70,7 @@ $(function() {
    */
   function read() {
     loader.show();
-    var key = $.trim($('#keyName').val()) || "";
+    var key = $.trim($('#keyName').val());
     $.get(App.baseUrl + '/users?q={"name":{"$regex":"' + key + '"}}&apiKey=' + App.apiKey, function(data) {
       loader.remove();
       users = data;

@@ -85,7 +85,7 @@
         .show()
         .scrollTop(0)
 
-      that.adjustDialog();
+      that.adjustDialog()
 
       if (transition) {
         that.$element[0].offsetWidth // force reflow
@@ -142,8 +142,8 @@
       .off('focusin.bs.modal') // guard against infinite focus loop
       .on('focusin.bs.modal', $.proxy(function (e) {
         if (document !== e.target &&
-            this.$element[0] !== e.target &&
-            !this.$element.has(e.target).length) {
+          this.$element[0] !== e.target &&
+          !this.$element.has(e.target).length) {
           this.$element.trigger('focus')
         }
       }, this))
@@ -238,19 +238,28 @@
   // these following methods are used to handle overflowing modals
 
   Modal.prototype.handleUpdate = function () {
-    this.adjustDialog();
-    this.verticalMiddle();
+    this.adjustDialog()
   }
 
   Modal.prototype.adjustDialog = function () {
-    var modalIsOverflowing = this.$element[0].scrollHeight > document.documentElement.clientHeight
+    var modalIsOverflowing = this.$element[0].scrollHeight > document.documentElement.clientHeight;
+    var that = this;
+    setTimeout(function(){
+      that.verticalMiddle()
+    }, 0);
 
     this.$element.css({
       paddingLeft:  !this.bodyIsOverflowing && modalIsOverflowing ? this.scrollbarWidth : '',
-      paddingRight: this.bodyIsOverflowing && !modalIsOverflowing ? this.scrollbarWidth : ''
-    });
-    this.verticalMiddle();
+      paddingRight: this.bodyIsOverflowing && !modalIsOverflowing ? this.scrollbarWidth : '',
+    })
   }
+
+  Modal.prototype.verticalMiddle = function () {
+    if (this.options.middle) {
+      this.$element.css('padding-top', (document.documentElement.clientHeight - this.$dialog.height()) / 2);
+    }
+  }
+
 
   Modal.prototype.resetAdjustments = function () {
     this.$element.css({
@@ -286,13 +295,6 @@
     var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
     this.$body[0].removeChild(scrollDiv)
     return scrollbarWidth
-  }
-
-  Modal.prototype.verticalMiddle = function () {
-    if (this.options.middle) {
-      this.$element.css('display', 'block');
-      this.$element.css('margin-top', Math.max(0, ($(window).height() - this.$dialog.height()) / 2));
-    }
   }
 
 
