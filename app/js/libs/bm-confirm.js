@@ -4,14 +4,15 @@
 var confirm = {
   /**
    * 显示确认框
+   * @param message
    * @param callback
    */
-  show: function(callback) {
+  show: function(message, callback) {
     var html = '<form class="modal fade" id="confirmModal" tabindex="-1"' +
       'role="dialog" aria-hidden="true" data-back-drop="static">' +
       '<div class="modal-dialog modal-sm">' +
       '<div class="modal-content">' +
-      '<div class="modal-body">确认要删除吗？</div>' +
+      '<div class="modal-body">' + message + '</div>' +
       '<div class="modal-footer" align="center">' +
       '<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>' +
       '<button type="submit" class="btn btn-primary">确定</button>' +

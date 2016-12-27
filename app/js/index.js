@@ -59,7 +59,7 @@ $(function() {
   // 点击删除按钮
   tbody.on('click', '.delete-btn', function() {
     index = tbody.find('.delete-btn').index($(this));
-    confirm.show(function() {
+    confirm.show('确认要删除该用户吗？', function() {
       user = users[index];
       remove();
     });
