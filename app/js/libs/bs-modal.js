@@ -246,7 +246,7 @@
     var that = this;
     setTimeout(function(){
       that.verticalMiddle()
-    }, 0);
+    }, 10);
 
     this.$element.css({
       paddingLeft:  !this.bodyIsOverflowing && modalIsOverflowing ? this.scrollbarWidth : '',

@@ -17,7 +17,7 @@ module.exports = function(grunt) {
       generated: {
         expand: true,
         cwd: '<%= config.app %>',
-        src: '**/*.html',
+        src: ['**/*.html', 'img/**'],
         dest: '<%= config.dist %>'
       }
     },

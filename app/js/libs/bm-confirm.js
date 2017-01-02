@@ -9,7 +9,7 @@ var confirm = {
    */
   show: function(message, callback) {
     var html = '<form class="modal fade" id="confirmModal" tabindex="-1"' +
-      'role="dialog" aria-hidden="true" data-back-drop="static">' +
+      'role="dialog" aria-hidden="true" data-backdrop="static">' +
       '<div class="modal-dialog modal-sm">' +
       '<div class="modal-content">' +
       '<div class="modal-body">' + message + '</div>' +
