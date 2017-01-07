@@ -44,14 +44,13 @@ $(function() {
     });
   }
 
-  // 新增编辑
+  // 表单验证
   App.initValidator();
 
   userModal.validate({
     submitHandler: function(form) {
       $(form).find('button[type="submit"]')
         .attr('disabled', true).addClass('disabled');
-
       save();
     }
   });
