@@ -1,5 +1,5 @@
 var App = {
-  baseUrl: 'https://api.mlab.com/api/1/databases/sample/collections',
+  baseUrl: 'https://api.mlab.com/api/1/databases/tutorial/collections',
   apiKey: 'zAIsqJqj73FywHB6GzNSEDI7aeO-09o3',
 
   /**
