@@ -1,6 +1,6 @@
 本实例使用mLab RESTful 数据API和jQuery创建一个简单的CRUD应用，支持简单搜索和数据合法性验证。
 
-Demo: https://szriafan.github.io/mlab-data-api/app
+Demo: https://51fe.github.io/mlab-data-api/app
 
 一、新建数据
 
