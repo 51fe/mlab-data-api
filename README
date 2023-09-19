@@ -4,7 +4,7 @@ Demo: https://51fe.github.io/mlab-data-api/app
 
 一、新建数据
 
-首先上mongolab官网注册账号，然后新建mongoDB数据库sample，请参考教程http://www.riafan.com/mlab-intro
+首先上mongolab官网注册账号，然后新建mongoDB数据库sample
 
 二、部署
 
